@@ -54,7 +54,7 @@ body {
   }
 }
 
-/* ===== DARK ELEGANT HEADER VARIANT ===== */
+/* ===== HEADER & NAVIGATION ===== */
 header {
   position: fixed;
   width: 100%;
@@ -135,9 +135,6 @@ header {
 .nav-link:hover {
   color: var(--primary-color) !important;
 }
-
-
-
 
 /* Mobile menu styles */
 @media (max-width: 991.98px) {
@@ -270,6 +267,20 @@ section p {
   margin-bottom: 1.5rem;
 }
 
+.phi-text-box {
+  background: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--accent-color);
+}
+
+.phi-text-box p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
 /* ===== CARD GRID ===== */
 .row {
   display: flex;
@@ -342,6 +353,74 @@ section p {
   .card-item {
     flex: 0 0 33.333%;
   }
+}
+
+/* ===== APPLICATIONS SECTION ===== */
+#applications .card-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#applications .card-item-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#applications .card-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  color: var(--dark-color);
+  position: relative;
+}
+
+#applications .card-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--gradient);
+}
+
+#applications .card-item ul {
+  margin: 1rem 0;
+  flex-grow: 1;
+}
+
+#applications .card-item li {
+  font-size: 0.95rem;
+  margin: 0.8rem 0;
+  padding-left: 1.8rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+#applications .card-item li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+#applications .card-item p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+#applications .card-item-inner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#applications h2 {
+  margin-bottom: 3rem;
 }
 
 /* ===== CODE BLOCKS ===== */
@@ -419,6 +498,21 @@ footer p {
   transform: translateY(0);
 }
 
+.slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 767.98px) {
   .hero {
@@ -436,6 +530,10 @@ footer p {
   
   .section-card {
     padding: 2rem 1rem;
+  }
+  
+  #applications .card-item {
+    flex: 0 0 100%;
   }
 }
 
@@ -458,5 +556,20 @@ footer p {
   
   .navbar-brand::before {
     font-size: 1rem;
+  }
+  
+  #applications .card-item-inner {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #applications .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #applications .card-item {
+    display: flex;
   }
 }
